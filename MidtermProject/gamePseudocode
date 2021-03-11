@@ -1,1 +1,32 @@
-
+START
+Declaration
+String myHand
+String yourHand
+String theWinner
+Display “Player-1 please enter R for Rock, P for Paper, or S Scissors”
+	Input myHand
+Display Player-2 please enter R for Rock, P for Paper, or S Scissors”
+	Input yourHand
+If myHand = P
+	If yourHand = P
+		theWinner = Tie!
+Else If yourHand = R
+theWinner = Player-1!
+	Else If yourHand = S
+		theWinner = Player-2!
+Else If myHand = R
+	If yourHand = P
+		theWinner = Player-2!
+Else If yourHand = R
+theWinner = Tie!
+	Else If yourHand = Scissors
+		theWinner = Player-1! 
+Else If myHand = S
+	If yourHand = P
+		theWinner = Player-1!
+Else If yourHand = R
+theWinner = Player-2!
+Else If yourHand = S
+		theWinner = Tie!
+Display theWinner
+STOP
