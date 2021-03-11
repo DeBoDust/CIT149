@@ -1,32 +1,50 @@
 START
+
 Declaration
-String myHand
-String yourHand
-String theWinner
-Display “Player-1 please enter R for Rock, P for Paper, or S Scissors”
-	Input myHand
-Display Player-2 please enter R for Rock, P for Paper, or S Scissors”
-	Input yourHand
-If myHand = P
-	If yourHand = P
-		theWinner = Tie!
-Else If yourHand = R
-theWinner = Player-1!
-	Else If yourHand = S
-		theWinner = Player-2!
-Else If myHand = R
-	If yourHand = P
-		theWinner = Player-2!
-Else If yourHand = R
-theWinner = Tie!
-	Else If yourHand = Scissors
-		theWinner = Player-1! 
-Else If myHand = S
-	If yourHand = P
-		theWinner = Player-1!
-Else If yourHand = R
-theWinner = Player-2!
-Else If yourHand = S
-		theWinner = Tie!
-Display theWinner
+	Integer playerHand
+	Integer compHand
+	Integer theWinner  // 1 for player, 2 for computer, 3 for tie
+
+MAIN
+
+Display “Player one Enter 1 for Rock, 2 for Scissors, 3 for Paper”
+	Input playerHand 
+computerHand = ((int)(Math.random() * 100) % 3 + 1); // RNG for computer hand
+
+If playerHand = 1 //Rock
+	if compHand = 1 
+		theWinner = 3 // tie
+	else if compHand = 2
+		theWinner = 1 // Player one
+	else if compHand = 3 
+		theWinner = 2 // Computer wins
+
+Else If playerHand = 2 // Scissors
+	if compHand = 1
+		theWinner = 2 // Computer wins
+	else if compHand = 2
+		theWinner = 3 // Tie
+	else if compHand = 3 
+		theWinner = 1 // Player Wins
+		
+Else If playerHand = 3 // papper
+	if compHand = 1
+		theWinner = 1 // player wins
+	else if compHand = 2
+		theWinner = 2 // computer wins
+	else if compHand = 3 
+		theWinner = 3 // Tie
+End IF
+
+If theWinner = 1
+	display "Player one wins!"
+Else if theWinner = 2
+	display "The computer has won!"
+Else if	theWinner = 3
+	display "Its a tie!"
+End if
+		
+END MAIN
+
+
 STOP
